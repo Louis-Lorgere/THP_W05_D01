@@ -11,6 +11,14 @@
     <p>Le contenu du potin <%= gossip.content %>
     </p>
     <a href="/gossips/<%=id.to_s%>/edit/">Modifier potin</a>
+    <h2>Commentaires</h2>
+    <% comments.each_with_index do |comment, index| %>
+      <p>
+        <%= comment.author %><br/>
+        <%= comment.content %>
+      </p>
+    <% end %>
+    <a href="/gossips/<%=id.to_s%>/comment/">Ajouter un commentaire</a>
     <a href="/">Liste des potins </a>
   </body>
 </html>
